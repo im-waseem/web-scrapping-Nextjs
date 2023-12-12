@@ -1,18 +1,19 @@
+import React from 'react';
+import Image from 'next/image';
+import Searchbar from '@/components/Searchbar';
+import HeroCarousel from '@/components/HeroCarousel';
 
-import Image from "next/image"
-
-
-const Home =  () => {
-
+const Home = () => {
+  const products = ['Apple Iphone 15', 'Book', 'Sneakers']; // Sample product list
 
   return (
     <>
       <section className="px-6 md:px-20 py-24">
         <div className="flex max-xl:flex-col gap-16">
-          <div className="flex flex-col justify-center"> 
+          <div className="flex flex-col justify-center">
             <p className="small-text">
               Smart Shopping Starts Here:
-              <Image 
+              <Image
                 src="/assets/icons/arrow-right.svg"
                 alt="arrow-right"
                 width={16}
@@ -29,10 +30,10 @@ const Home =  () => {
               Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
             </p>
 
-           Seacrch bar
+            <Searchbar />
           </div>
 
-          Herocarousel 
+          <HeroCarousel />
         </div>
       </section>
 
@@ -40,13 +41,14 @@ const Home =  () => {
         <h2 className="section-text">Trending</h2>
 
         <div className="flex flex-wrap gap-x-8 gap-y-16">
-        {['Apple Iphone 15', 'Book', 'Sneakers'].map((product)=>(
-          <>{product}</>
-        ))}
+          {/* Mapping over the product array to display each item */}
+          {products.map((product, index) => (
+            <div key={index}>{product}</div>
+          ))}
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
