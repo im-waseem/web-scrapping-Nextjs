@@ -4,7 +4,6 @@ import { getLowestPrice, getHighestPrice, getAveragePrice, getEmailNotifType } f
 import { connectToDB } from "@/lib/mongose";
 import Product from "@/lib/models/product.model";
 import { scrapeAmazonProduct } from "@/lib/scraper";
-// import { generateEmailBody, sendEmail } from "@/lib/Nodemailer/index";
 
 import { generateEmailBody, sendEmail } from "@/lib/Nodemailer";
 export const maxDuration = 300; // This function can run for a maximum of 300 seconds
