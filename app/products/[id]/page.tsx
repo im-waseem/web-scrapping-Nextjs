@@ -11,10 +11,11 @@ import { redirect } from "next/navigation";
 type Props = {
   params: { id: string }
 }
+
 const ProductDetails = async ({ params: { id } }: Props) => {
   const product: Product = await getProductById(id);
 
-  if(!product) redirect('/');
+  if(!product) redirect('/')
 
   const similarProducts = await getSimilarProducts(id);
 
